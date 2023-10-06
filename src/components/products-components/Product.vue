@@ -14,7 +14,7 @@
             </div>
             <b-card-footer class="footer-card">
                 <b-button @click="addToCart(product)" variant="success" class="w-100">Show</b-button>
-                <DrawerVue/>
+                <Drawer/>
             </b-card-footer>
         </div>
       </div>
@@ -31,7 +31,6 @@
         }
     },
     components:{Drawer},
-    
     props: {
       product: {
         type: Object,
