@@ -2,19 +2,24 @@
 <template>
     <nav class="nav">
         <router-link to="/" class="nav-link">Home</router-link>
+        <router-link to="/products" class="nav-link">Products</router-link>
         <router-link to="/checkout" class="nav-link">Checkout</router-link>
     </nav>
 </template>
   
 <script>
 export default {
-    name: "NavigationMenu",
+    name: "Nav",
 };
 </script>
   
 <style scoped>
 .nav {
-    padding: 4rem 0 0 4rem;
+    padding: 0 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-link {

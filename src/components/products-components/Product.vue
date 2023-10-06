@@ -50,12 +50,6 @@ export default {
       useCartStore().addToCart(product);
       this.showAlert();
     },
-    showProductDetails(product) {
-      product.showDrawer = true;
-    },
-    toggleProductDrawer(product) {
-      product.showDrawer = !product.showDrawer;
-    },
     countDownChanged(dismissCountDown) {
       this.dismissCountDown = dismissCountDown
     },

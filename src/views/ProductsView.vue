@@ -44,6 +44,10 @@ export default {
   },
   async mounted() {
     await this.fetchProducts();
+    console.log("products", this.products);
+  },
+  created() {
+
   },
 };
 </script>

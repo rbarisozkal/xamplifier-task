@@ -12,8 +12,4 @@ export default {
   <RouterView />
 </template>
 
-<style scoped>
-.nav {
-  padding: 0 0 0 4rem;
-}
-</style>
+<style scoped></style>
