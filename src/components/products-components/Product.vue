@@ -14,8 +14,7 @@
         </div>
         <b-card-footer class="footer-card">
           <b-button @click="addToCart(product)" variant="success" class="w-100">Add to Cart</b-button>
-          <Drawer />
-
+          <Drawer :product="product" />
         </b-card-footer>
       </div>
     </div>
@@ -34,6 +33,7 @@ export default {
   data() {
     return {
       showSidebar: false,
+      showDrawer: false,
       dismissSecs: 3,
       dismissCountDown: 0
     }
@@ -50,8 +50,11 @@ export default {
       useCartStore().addToCart(product);
       this.showAlert();
     },
-    showProductDetails() {
-      this.$refs.productDetails.showDetails = true;
+    showProductDetails(product) {
+      product.showDrawer = true;
+    },
+    toggleProductDrawer(product) {
+      product.showDrawer = !product.showDrawer;
     },
     countDownChanged(dismissCountDown) {
       this.dismissCountDown = dismissCountDown

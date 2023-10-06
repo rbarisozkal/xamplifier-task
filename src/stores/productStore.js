@@ -10,7 +10,9 @@ export const useProductStore = defineStore({
       try {
         const response = await axios.get("https://fakestoreapi.com/products");
         this.products = response.data;
-        console.log(this.products);
+        this.products = this.products.map((product) => {
+          return { ...product, quantity: 1 };
+        });
       } catch (error) {
         console.error("Error fetching products:", error);
       }

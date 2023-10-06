@@ -7,6 +7,7 @@
         <div v-else>
             <div v-for="(cartItem, index) in cartItems" :key="index" class="cart-item">
                 <div class="cart-item-details">
+                    <img class="product-image" :src="cartItem.image" :alt="cartItem.title" />
                     <h2>{{ cartItem.title }}</h2>
                     <p>Price: ${{ cartItem.price }}</p>
                     <div class="quantity-control">
@@ -25,6 +26,7 @@
         </div>
     </div>
 </template>
+  
   
 <script>
 import { computed } from "vue";
@@ -62,7 +64,7 @@ export default {
         };
 
         const checkout = () => {
-            // Implement your checkout logic here
+            console.log("Checkout $", getTotalPrice());
         };
 
         return {
@@ -78,6 +80,84 @@ export default {
 </script>
   
 <style scoped>
-/* Your styles here */
+.checkout-page {
+    padding: 4rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 5px;
+}
+
+.quantity-control input {
+    width: 40px;
+    text-align: center;
+}
+
+.remove-button {
+    background-color: #ff5722;
+    max-height: 3rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+    background-color: #e64a19;
+}
+
+.total-price {
+    margin-top: 2rem;
+    text-align: right;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.checkout-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+    background-color: #388e3c;
+}
+
+.product-image {
+    max-width: 7rem;
+}
 </style>
   

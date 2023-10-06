@@ -23,12 +23,22 @@ export const useCartStore = defineStore({
     },
 
     addToCart(product) {
-      this.cartItems.push(product);
-      this.saveCart(); // Save the updated cart to local storage
+      const existingProduct = this.cartItems.find(
+        (item) => item.id === product.id
+      );
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        product.quantity = 1;
+        this.cartItems.push(product);
+      }
+
+      this.saveCart();
     },
+
     removeFromCart(index) {
       this.cartItems.splice(index, 1);
-      this.saveCart(); // Save the updated cart to local storage
+      this.saveCart();
     },
   },
 });
