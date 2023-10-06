@@ -42,8 +42,8 @@ export default {
       this.products = useProductStore().products;
     },
   },
-  mounted() {
-    this.fetchProducts();
+  async mounted() {
+    await this.fetchProducts();
   },
 };
 </script>

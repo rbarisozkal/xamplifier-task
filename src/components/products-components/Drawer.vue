@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button v-b-toggle.sidebar-1>Details</b-button>
+    <b-button class="w-100" v-b-toggle.sidebar-1>Details</b-button>
     <b-sidebar id="sidebar-1" title="Sidebar" shadow>
       <div class="px-3 py-2">
         <p>

@@ -1,9 +1,8 @@
 <script setup>
+import Checkout from '../components/checkout-components/Checkout.vue';
 
 </script>
 
 <template>
-  <main>
-    
-  </main>
+  <Checkout />
 </template>
